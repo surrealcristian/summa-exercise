@@ -20,4 +20,21 @@ class DesignerTest extends TestCase
         $this->assertEquals('B', $designer->getLastName());
         $this->assertEquals(25, $designer->getAge());
     }
+
+    public function testAddType()
+    {
+        $designer = (new Designer('Designer', 'A', 20))
+            ->addType('Graphic')
+            ->addType('Web');
+        $this->assertEquals(['graphic', 'web'], $designer->getTypes());
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testAddTypeThrowsException()
+    {
+        $designer = (new Designer('Designer', 'A', 20))
+            ->addType('Foo');
+    }
 }
