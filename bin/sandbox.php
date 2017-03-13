@@ -25,7 +25,7 @@ $designerA = (new Designer('Designer', 'A', 40))
     ->setId(1)
     ->addType('Graphic');
 
-$designerB = (new Designer('Designer', 'A', 50))
+$designerB = (new Designer('Designer', 'B', 50))
     ->setId(2)
     ->addType('Web');
 
